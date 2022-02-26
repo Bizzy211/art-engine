@@ -5,14 +5,14 @@ const { NETWORK } = require(`${basePath}/constants/network.js`);
 const network = NETWORK.eth;
 
 // General metadata for Ethereum
-const namePrefix = "Your Collection";
-const description = "Remember to replace this description";
+const namePrefix = "Eating Zero(es) Presents - Demi Boyz";
+const description = "Demi Boyz Edition";
 const baseUri = "ipfs://NewUriToReplace";
 
 const solanaMetadata = {
-  symbol: "YC",
+  symbol: "EAT",
   seller_fee_basis_points: 1000, // Define how much % you want from secondary market sales 1000 = 10%
-  external_url: "https://www.youtube.com/c/hashlipsnft",
+  external_url: "https://www.eatingzeroes.com",
   creators: [
     {
       address: "7fXNuer5sbZtaTEPhtJ5g5gNtuyRoKkvxdjEjEnPN4mC",
@@ -24,15 +24,30 @@ const solanaMetadata = {
 // If you have selected Solana then the collection starts from 0 automatically
 const layerConfigurations = [
   {
-    growEditionSizeTo: 5,
+    growEditionSizeTo: 20,
     layersOrder: [
-      { name: "Background" },
-      { name: "Eyeball" },
-      { name: "Eye color" },
-      { name: "Iris" },
-      { name: "Shine" },
-      { name: "Bottom lid" },
-      { name: "Top lid" },
+      /*{ name: "Background" , 
+        options: {
+          bypassDNA: true,
+        },
+      },*/
+      { name: "Base" , 
+      options: {
+        bypassDNA: true,
+      },},
+      { name: "Eyes" , 
+      options: {
+        bypassDNA: true,
+      },},
+      { name: "Hat Bill" },
+      { name: "Hoodie" }, 
+      { name: "Hat Stitches" },
+      { name: "Hat Body" },
+      { name: "Hat Plate" },
+      { name: "Buttons" },
+      { name: "String Sleeve" },
+      { name: "Ganja Leaf" },
+      { name: "Mouth" },
     ],
   },
 ];
@@ -42,8 +57,8 @@ const shuffleLayerConfigurations = false;
 const debugLogs = false;
 
 const format = {
-  width: 512,
-  height: 512,
+  width: 1500,
+  height: 1500,
   smoothing: false,
 };
 
@@ -72,13 +87,15 @@ const pixelFormat = {
 };
 
 const background = {
-  generate: true,
+  generate: false,
   brightness: "80%",
   static: false,
   default: "#000000",
 };
 
-const extraMetadata = {};
+const extraMetadata = {
+  external_url: "http://www.eatingzeroes.com",
+};
 
 const rarityDelimiter = "#";
 
